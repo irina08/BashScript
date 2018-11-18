@@ -1,0 +1,49 @@
+#!/bin/bash
+# Author    : Irina Golovko
+# Class     : CS 260A
+# Date      : 03/04/2018
+# Homework  : HW4 (approach 1) 
+# File Name : Hills_traffic_controller
+# Objective :  This script show who is currently 
+#  			   on the hills.ccsf.edu, just log in and 
+#  			   who is log of. It's updated every 25 seconds
+# 			   and will run forever until push CTRL + C.
+# 			   Blue color for users who just login 
+#              on the hills (tput setaf 4 and "<")
+# 			   Green color for users who logout from 
+# 			   hills (tput setaf 2 and ">")
+#  			   Script use not only userID but and number 
+# 			   of pts too because traffic too slow and 
+# 			   some users run a lot of processes in the 
+# 			   same time and easy to check for tutorial 
+# 			   which process just is stopped or is added.
+
+
+who | tr -s " " | cut -d' ' -f1-4 | sort -u | column -t > login.txt
+touch logout.txt
+tput setaf 4
+echo "Who is currently log in/log of the system"
+echo -e "Username  pts      date-time login   date-time logout"
+tput sgr0
+cat login.txt
+
+while sleep 25
+do
+  mv login.txt logout.txt
+  who | tr -s " " | cut -d' ' -f1-4 | sort -u | column -t > login.txt
+  tput setaf 4
+  diff login.txt logout.txt | grep "<" | cut -c 3- 
+  tput sgr0
+  
+  tput setaf 2
+  diff login.txt logout.txt | grep ">" | cut -c 3- > newout.txt
+  dout=`date +"%F %H:%M"`
+  while read line; do
+      echo "$line $dout"
+  done < newout.txt
+  rm newout.txt
+  tput sgr0
+done   
+
+  
+  

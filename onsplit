@@ -1,0 +1,254 @@
+#!/bin/bash
+
+# Author    : Irina Golovko
+# Class     : CS 260A
+# Date      : 04/29/2018
+# Homework  : Assignment #5
+# File Name : onsplit
+# Objective :  This script combines together given partitions 
+# 			   of file - opposite comand 'split'. we can use 
+# 			   options with arguments or without options. 
+#
+#      Usage:  onsplit -f filename filename*
+# 			   onsplit -f -d f1 f2 f3
+# 			   onsplit -f filename -l 100 -d f1 f2 f3
+# 			   onsplit f1 f2 f3
+# 			   onsplit -c 25000 f1 f2 f3
+# 	 Options:
+#  			-f filename - combines partitions in one file with
+# 						  given name "filename" (default - 'noname')
+# 			Option 'l' only for text files (not for binary)
+#  			-l 100 - combines partitions in one file with given
+# 			number of lines ( default number of lines = 1000)
+# 			-c 26000 - combines partitions in one file with given
+# 			number of bytes ( default number of bytes equals file size)
+# 			-d - delete all partitions after combine it together
+#  			-h -help
+# 
+# 			If you try to combine files that don't exist or not just 
+# 			regular files (directories...) it gives error message
+# 			"File 'filename' doesn't exist."
+# 			If you try to combine files that don't have read permission
+# 			it gives error message "Please give permission read 
+# 			for file 'filename' in order to combine files."
+#  	
+#			If you try to combine files into one file with given
+# 			name that already exists it will give error message
+# 			"File 'filename' already exist."
+# 	
+# Return value: 
+#    0    Successful 
+#    1    Errors
+#
+#################################################################
+
+# We need to check if at least one argument 
+# in command line is provided.
+
+if [[ $# -lt 1 ]]; then
+	echo "usage: $(basename $0) needs files for combine."
+	exit 1
+fi
+
+
+
+
+# function help() displays all possible options with 
+# or without arguments
+help()
+{
+cat <<EOF
+onsplit <option> <argument>
+-f filename: 	combines partitions in one file with
+			  	given name "filename" (default - "noname");
+ 				Option 'l' only for text files (not for binary)
+-l number:  	combines partitions in one file with given
+			number of lines (default number of lines = 1000)
+-c number: 		combines partitions in one file with given
+ 				number of bytes (default number of bytes equals
+				the size of created file)
+-d: 			delete all partitions after combine it together
+-h: 			display help
+
+	Examples:  onsplit -f filename filename*
+ 			   onsplit -f -d f1 f2 f3
+ 			   onsplit -l 100 -f filename -d f1 f2 f3
+			   onsplit f1 f2 f3
+			   onsplit -c 25000 f1 f2 f3
+			   onsplit -h
+EOF
+}
+
+#*********************************************************************
+fflag=false; lflag=false; cflag=false; dflag=false
+#! for determine type of file like 'binary'
+tb="binary"
+
+options=":l:hc:f:d"
+while getopts  $options  opt; do
+   case $opt in
+     'l' ) lflag=true; numlines=$OPTARG;;
+     'h' ) help;;
+     'c' ) cflag=true; filesize=$OPTARG;; 
+     'f' ) fflag=true
+	       filename=$OPTARG
+		   if [ -f $filename ]; then
+		   	echo "File $filename already exist."
+		   	exit 1
+		   fi
+		   ;;  
+     'd' ) dflag=true;;
+     '?' ) echo "Invalid option -$OPTARG"; exit 1
+   esac
+done
+shift $(( $OPTIND - 1 ))
+
+
+
+
+if ! $fflag; then
+   filename="noname"
+   if [ -f $filename ]; then
+   	echo "By default the name of combine files is 'noname'."
+	echo "File $filename already exists."
+	echo "Please use option 'f' to give specific filename."
+   	exit 1
+   fi
+fi
+
+for fname in "$@"
+do
+	if [ ! -f $fname ]; then
+		echo "File $fname doesn't exist."
+		exit 1
+	fi
+done
+
+for fname in "$@"
+do
+	if [ ! -r $fname ]; then
+		echo "Please give permission read for file $fname"
+		echo "in order to combine this file."
+		exit 1
+	fi 
+done
+
+for fname in "$@"; do
+    cat $fname >> $filename
+done
+
+if $lflag; then
+	b=`file --mime-encoding $filename | cut -d: -d' ' -f2`
+	if [ "$b" == "$tb" ]; then
+		echo "$filename will be a binary file."
+		echo "We cannot use option l for binary files."
+		exit 1
+	fi
+	flines=`wc -l "$filename" | cut -d' ' -f1`
+	
+	#! for debbuging 
+	echo "numlines= $numlines flines = $flines "
+
+ 	diffl=$((numlines-flines))
+	
+	#for debugging
+	echo " diffl = $diffl "
+	
+	if [ $diffl -gt 0 ]; then
+	count=0        
+	while [ $count -lt $diffl ]
+	do
+		
+		
+		
+		echo >> $filename
+		((count++))
+	done
+	fi
+	
+	if [ $diffl -lt 0 ]; then
+		echo "We cannot create file $filename with number of lines"
+		echo "less than the whole number of lines in the all partitions."
+		echo "The number of lines of the file $filename supposed to be"
+		echo " no less then $flines."
+		rm $filename	
+		exit 1
+	fi
+fi
+
+if ! $lflag; then
+	if ! $cflag; then 
+	b=`file --mime-encoding $filename | cut -d: -d' ' -f2`
+	
+	#!for debugging
+	echo "type of file $b"
+	
+	if [ "$b" != "$tb" ]; then
+		numlines=1000
+		flines=`wc -l "$filename" | cut -d' ' -f1`
+		
+		#! for debugging
+		echo "numlines  = $numlines flines = $flines "
+
+	 	diffl=$((numlines-flines))
+		
+		#! for debugging
+		echo " diffl = $diffl"
+		
+		if [ $diffl -gt 0 ]; then
+		count=0       
+		while [ $count -le $diffl ]
+		do
+			echo >> $filename
+			((count++))
+		done
+		fi
+	
+		if [ $diffl -lt 0 ]; then
+			echo "We cannot create file $filename with 1000 number of lines"
+			echo "by default because it less than the whole number of lines"
+			echo "in the all partitions. The number of lines of the file"
+			echo "$filename supposed to be no less then $flines."
+			rm $filename	
+			exit 1
+		fi
+
+
+
+	fi
+fi	
+fi
+
+if $cflag; then 
+	fsize=`wc -c $filename | cut -d' ' -f1`
+	
+	#! for debbuging 
+	echo "fsize = $fsize "
+	
+	if (( fsize <= filesize ))
+ 	then
+		diffs=$((filesize-fsize))
+		
+		#! for debbuging
+		echo " diffsize = $diffs "
+		
+		dd if=/dev/zero bs=1 count="$diffs" | cat >> $filename
+ 	   ls -la $filename
+	else
+		echo "We cannot create file $filename with size less than"
+    	echo "size of all partitions."
+    	echo "Created file will be badly damaged."
+    	echo "The size of file $filename supposed to be no less then $fsize"
+		rm $filename
+   	 exit 1
+	fi
+fi
+
+if  $dflag; then
+    for fname in $*; do
+        rm $fname
+    done
+fi
+
+#! checking created or no file 
+ls -la $filename

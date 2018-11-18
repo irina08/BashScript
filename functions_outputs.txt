@@ -1,0 +1,184 @@
+Student Irina Golovko
+Outputs from script functions.sh
+
+irinas-MacBook-Pro:HW irinagolovko$ ./functions.sh
+Files and subdirectories in /dir1/dir1a
+Error message: /dir1/dir1a not a valid directory
+______________________________________
+Files and subdirectories in files.txt
+Error message: files.txt not a valid directory
+_______________________________________
+ Files and subdirectories in /Users/irinagolovko/lab 
+/Users/irinagolovko/lab is a subdirectory
+/Users/irinagolovko/lab/.DS_Store is a file
+/Users/irinagolovko/lab/00 is a file
+/Users/irinagolovko/lab/000 is a file
+/Users/irinagolovko/lab/01 is a file
+/Users/irinagolovko/lab/08 is a file
+/Users/irinagolovko/lab/09 is a file
+/Users/irinagolovko/lab/1.sh is a file
+/Users/irinagolovko/lab/10 is a file
+/Users/irinagolovko/lab/1002 is a file
+/Users/irinagolovko/lab/101 is a file
+/Users/irinagolovko/lab/102 is a file
+/Users/irinagolovko/lab/11 is a file
+/Users/irinagolovko/lab/110 is a file
+/Users/irinagolovko/lab/12 is a file
+/Users/irinagolovko/lab/120 is a file
+/Users/irinagolovko/lab/13 is a file
+/Users/irinagolovko/lab/15 is a file
+/Users/irinagolovko/lab/150 is a file
+/Users/irinagolovko/lab/151 is a file
+/Users/irinagolovko/lab/25.sh is a file
+/Users/irinagolovko/lab/3.sh is a file
+/Users/irinagolovko/lab/30 is a file
+/Users/irinagolovko/lab/31 is a file
+/Users/irinagolovko/lab/32 is a file
+/Users/irinagolovko/lab/35 is a file
+/Users/irinagolovko/lab/36 is a file
+/Users/irinagolovko/lab/37 is a file
+/Users/irinagolovko/lab/371 is a file
+/Users/irinagolovko/lab/37_1 is a file
+/Users/irinagolovko/lab/37_2 is a file
+/Users/irinagolovko/lab/4 is a file
+/Users/irinagolovko/lab/45 is a file
+/Users/irinagolovko/lab/4_11.sh is a file
+/Users/irinagolovko/lab/5 is a file
+/Users/irinagolovko/lab/6 is a file
+/Users/irinagolovko/lab/7 is a file
+/Users/irinagolovko/lab/a.sh is a file
+/Users/irinagolovko/lab/a2.sh is a file
+/Users/irinagolovko/lab/a3.sh is a file
+/Users/irinagolovko/lab/a_a.sh is a file
+/Users/irinagolovko/lab/aa.sh is a file
+/Users/irinagolovko/lab/aaa.sh is a file
+/Users/irinagolovko/lab/b.sh is a file
+/Users/irinagolovko/lab/c.sh is a file
+/Users/irinagolovko/lab/ce is a file
+/Users/irinagolovko/lab/ces is a file
+/Users/irinagolovko/lab/d.list is a subdirectory
+/Users/irinagolovko/lab/derah is a file
+/Users/irinagolovko/lab/dir1 is a subdirectory
+/Users/irinagolovko/lab/dir1/b.sh is a file
+/Users/irinagolovko/lab/dir1/dir1a is a subdirectory
+/Users/irinagolovko/lab/dir1/dir1a/dir1a1 is a subdirectory
+/Users/irinagolovko/lab/dir1/dir1a/dir1a2 is a subdirectory
+/Users/irinagolovko/lab/dir1/dir1a/file1 is a file
+/Users/irinagolovko/lab/dir1/dir1a/file2 is a file
+/Users/irinagolovko/lab/dir1/file1 is a file
+/Users/irinagolovko/lab/dir1/file2 is a file
+/Users/irinagolovko/lab/dir2 is a subdirectory
+/Users/irinagolovko/lab/dir2/23 is a file
+/Users/irinagolovko/lab/dir2/dir2a is a subdirectory
+/Users/irinagolovko/lab/dir2/dir2a/dir2a1 is a subdirectory
+/Users/irinagolovko/lab/dir2/dir2a/dir2a1/file1 is a file
+/Users/irinagolovko/lab/dirs.list is a file
+/Users/irinagolovko/lab/dirs.out is a file
+/Users/irinagolovko/lab/dirs.txt is a file
+/Users/irinagolovko/lab/echo is a file
+/Users/irinagolovko/lab/f.list is a file
+/Users/irinagolovko/lab/farah is a file
+/Users/irinagolovko/lab/fil.txt is a file
+/Users/irinagolovko/lab/files.list is a file
+/Users/irinagolovko/lab/files.txt is a file
+/Users/irinagolovko/lab/Hw4_1.sh is a file
+/Users/irinagolovko/lab/hw4_2.sh is a file
+/Users/irinagolovko/lab/Hw4_20.sh is a file
+/Users/irinagolovko/lab/minedir is a subdirectory
+/Users/irinagolovko/lab/minedir/Hw4_1.sh is a file
+/Users/irinagolovko/lab/printf is a file
+/Users/irinagolovko/lab/walk.sh is a file
+__________________________________________________
+Files and subdirectories in Users/irinagolovko/Documents/Unix
+/Users/irinagolovko/Documents/Unix is a subdirectory
+/Users/irinagolovko/Documents/Unix/.DS_Store is a file
+/Users/irinagolovko/Documents/Unix/Access.docx is a file
+/Users/irinagolovko/Documents/Unix/change_pass.docx is a file
+/Users/irinagolovko/Documents/Unix/Commands.docx is a file
+/Users/irinagolovko/Documents/Unix/Concepts_and_shells.docx is a file
+/Users/irinagolovko/Documents/Unix/enviroment.docx is a file
+/Users/irinagolovko/Documents/Unix/Exercises-BasicRegularExpressions.pdf is a file
+/Users/irinagolovko/Documents/Unix/Files_and_directories.docx is a file
+/Users/irinagolovko/Documents/Unix/Getting_Started.docx is a file
+/Users/irinagolovko/Documents/Unix/Glossary.docx is a file
+/Users/irinagolovko/Documents/Unix/grepInUnix.docx is a file
+/Users/irinagolovko/Documents/Unix/igolovko1.txt is a file
+/Users/irinagolovko/Documents/Unix/igolovkoAssignment1.txt is a file
+/Users/irinagolovko/Documents/Unix/igolovkoAssignment2.txt is a file
+/Users/irinagolovko/Documents/Unix/igolovkoAssignment3.txt is a file
+/Users/irinagolovko/Documents/Unix/igolovkoAssignment4.txt is a file
+/Users/irinagolovko/Documents/Unix/igolovkoExtraCreditAssignment.txt is a file
+/Users/irinagolovko/Documents/Unix/Linux_introduction_theory.docx is a file
+/Users/irinagolovko/Documents/Unix/mail_unix.docx is a file
+/Users/irinagolovko/Documents/Unix/Managing_job_and_processes.docx is a file
+/Users/irinagolovko/Documents/Unix/SearchingInUnix(1).htm is a file
+/Users/irinagolovko/Documents/Unix/SearchingInUnix.htm is a file
+/Users/irinagolovko/Documents/Unix/ShellScript is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/.DS_Store is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/8.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/.DS_Store is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/1_example_directory.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/2_example_directory.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/30.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/35.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/36.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/functions.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/Hw1BasicUnixCommand.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/Hw2.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/Hw2Script.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/HW3_flowControl_loops_documentation.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/HW4.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4 is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4/.DS_Store is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4/Hw4_1.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4/Hw4_2.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4/Hw4_3.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4/Outputs_HomeWork4.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/IGolovko_HW4.zip is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1 is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/dir1a is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/dir1a/dir1a1 is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/dir1a/dir1a2 is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/dir1a/file1 is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/dir1a/file2 is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/file1 is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir1/file2 is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir2 is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir2/23 is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir2/dir2a is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir2/dir2a/dir2a1 is a subdirectory
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dir2/dir2a/dir2a1/file1 is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dirs.list is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/dirs.txt is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/files.list is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/files.txt is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/Hw4_1.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/Hw4_2.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/lab/Hw4_3.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/HW/script2.sh is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/hw.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/Hw4.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/poleznoe.sql is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/Shell_Loops.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/Shell_random.docx is a file
+/Users/irinagolovko/Documents/Unix/ShellScript/Shell_Variables.docx is a file
+/Users/irinagolovko/Documents/Unix/solutionFileMgt.htm is a file
+/Users/irinagolovko/Documents/Unix/solutionSearching.htm is a file
+/Users/irinagolovko/Documents/Unix/UNIX_file_system.docx is a file
+/Users/irinagolovko/Documents/Unix/untitled.txt is a file
+/Users/irinagolovko/Documents/Unix/Writing_shell_scripts.docx is a file
+______________________________________________
+Testing function file_size1
+Size of /Users/irinagolovko/Desktop/java_exer.docx = 86177 bytes.
+Error message: /Users/irinagolovko/Desktop/Workspace not a file or doesn't exist
+Error message: /Users/irinagolovko/Desktop/numbers not a file or doesn't exist
+Size of /Users/irinagolovko/lab/hw4_2.sh = 927 bytes.
+______________________________________________
+Testing function file_size2
+/Users/irinagolovko/Desktop/java_exer.docx is a file and its size = 86177 bytes.
+/Users/irinagolovko/Desktop/Workspace is a directory and its size = 714 bytes.
+Error message: /Users/irinagolovko/Desktop/numbers doesn't exist
+/Users/irinagolovko/lab/hw4_2.sh is a file and its size = 927 bytes.
+irinas-MacBook-Pro:HW irinagolovko$ 

@@ -1,0 +1,107 @@
+#!/bin/bash
+
+# Author    : Irina Golovko
+# Class     : CS 260A
+# Date      : 02/17/2018
+# Homework  : extra credit 1 
+# File Name : show_users
+# Objective :  This script show system users and regular users 
+# 			   
+#      Usage:  show_users -s 
+# 			   show_users -r 
+# 			   show_users -h
+# 	 Options:
+# 			-s - show assigned and dinamicly assigned system users 
+# 			- r - show regular users 
+#  			-h -help
+# 
+# Return value: 
+#    0    Successful 
+#    1    Errors
+#
+#################################################################
+#Min/max values for automatic uid selection in useradd 
+# check /etc/login.defs
+# For Cent OS (like silver) assigned system user iD 
+# from 1 to 200; dynamic sistem userId: 201-999;
+# regular user: 1000 - 60000 (for Silver server);
+# For Ubunty assigned system user iD 
+# from 1 to 99; dynamic sistem userId: 100-999;
+# regular user: 1000 and more;
+# root UserID = 0 and it's regular user
+
+file="/etc/passwd"
+# function help() displays all possible options 
+help()
+{
+cat <<EOF
+show_users <option> 
+-s: show assigned and dinamicly assigned system users 
+-r: show regular users 
+-h: display help
+EOF
+}
+
+assigned_system_users()
+{
+	while read -r line
+	do
+		tmp=`echo $line | cut -d: -f3`
+		if [ $tmp -gt 0 ] && [ $tmp -lt 201 ]; then
+			
+			
+			
+			
+			
+			
+			uN=`echo $line | cut -d: -f1`
+			echo "UserName: $uN, UserID: $tmp"
+		fi
+	done < $file
+}
+
+dynamic_system_users()
+{
+	while read -r line
+	do
+		tmp=`echo $line | cut -d: -f3`
+		if [ $tmp -gt 200 ] && [ $tmp -lt 1000 ]; then
+			uN=`echo $line | cut -d: -f1`
+			echo "UserName: $uN, UserID: $tmp"
+		fi
+	done < $file
+}
+
+regular_users()
+{
+	while read -r line
+	do
+		tmp=`echo $line | cut -d: -f3`
+		if [ $tmp -gt 999 ] || [ $tmp -eq 0 ]; then
+			uN=`echo $line | cut -d: -f1`
+			echo "UserName: $uN, UserID: $tmp"
+		fi
+	done < $file
+}
+
+while getopts ":srh" opt
+do
+	case $opt in
+	s) echo "Show system users."
+	echo "Show assigned system users:"
+	assigned_system_users
+	echo "Show dynamic system users:"
+	dynamic_system_users
+	;;	
+	r) echo "Show regular users:"
+	regular_users
+	;;
+	h) help
+	;;
+	*) echo "Invalid option: -$OPTARG."; exit 1;;
+	esac
+done
+
+
+
+
